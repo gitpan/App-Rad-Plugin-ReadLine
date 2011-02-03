@@ -14,8 +14,13 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-Rad-Plugin-ReadLine
+no_index:
+  directory:
+    - example
+  namespace:
+    - App::Rad::Plugin::ReadLine::Demo
 requires:
   Data::Dumper: 0
   Term::ReadLine: 0
   Term::UI: 0
-version: 0.001
+version: 0.002

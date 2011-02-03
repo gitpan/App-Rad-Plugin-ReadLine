@@ -1,6 +1,6 @@
 package App::Rad::Plugin::ReadLine;
 BEGIN {
-  $App::Rad::Plugin::ReadLine::VERSION = '0.001';
+  $App::Rad::Plugin::ReadLine::VERSION = '0.002'; # TRIAL
 }
 
 # ABSTRACT: App::Rad::Plugin::ReadLine a Term::UI ->shell for Rad Apps
@@ -22,7 +22,11 @@ our $still_going = 1;
 use Term::UI;
 use Term::ReadLine;
 
-our $term = Term::ReadLine->new($ENV{TERM} || 'critter');
+
+our $term;
+sub _terminal { 
+    $term ||= Term::ReadLine->new($ENV{TERM} || 'critter');
+}
 
 sub _shell_prompt   {
     # add a space to the end
@@ -139,7 +143,7 @@ sub shell {
 
     while($still_going) {
         (my $cmd, local @ARGV) = split  ' ',
-        $term->get_reply(
+        _terminal->get_reply(
               prompt => _shell_prompt(),
               default => $DefaultCommand,
         );
@@ -170,7 +174,7 @@ App::Rad::Plugin::ReadLine - App::Rad::Plugin::ReadLine a Term::UI ->shell for R
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -240,7 +244,7 @@ that implement a C<&shell> method
 
   
 
-## 02-registered exited with 9
+## 02-registered exited with 255
 
 If you call C<< ->shell_options >> you will get an extra sub-command that starts a shell for you.
 
@@ -287,7 +291,7 @@ If you call C<< ->shell_options >> you will get an extra sub-command that starts
 
   
 
-## 03-subshell-app exited with 9
+## 03-subshell-app exited with 255
 
 =head2 Commands with arguments 
 

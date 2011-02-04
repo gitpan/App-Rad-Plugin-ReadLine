@@ -1,6 +1,6 @@
 package App::Rad::Plugin::ReadLine::Demo;
 BEGIN {
-  $App::Rad::Plugin::ReadLine::Demo::VERSION = '0.002'; # TRIAL
+  $App::Rad::Plugin::ReadLine::Demo::VERSION = '0.002';
 }
 # ABSTRACT: export &demo into your App::Rad app, so you can use ExampleRunner in the pod
 

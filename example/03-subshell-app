@@ -1,8 +1,8 @@
 #! /usr/bin/perl
 
-use warnings; use strict;                                       # boring
-use lib qw[ lib ];                                              # boring
-use App::Rad::Plugin::ReadLine::Demo;                           # boring
+use warnings; use strict;                           # boring
+use lib qw[ lib ];                                  # boring
+use App::Rad::Plugin::ReadLine::Demo qw[ demo ];    # boring
 use App::Rad qw[ ReadLine ];
 App::Rad->run();
 sub setup {

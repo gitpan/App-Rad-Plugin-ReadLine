@@ -1,6 +1,6 @@
 package App::Rad::Plugin::ReadLine;
 BEGIN {
-  $App::Rad::Plugin::ReadLine::VERSION = '0.002'; # TRIAL
+  $App::Rad::Plugin::ReadLine::VERSION = '0.002';
 }
 
 # ABSTRACT: App::Rad::Plugin::ReadLine a Term::UI ->shell for Rad Apps
@@ -242,9 +242,19 @@ that implement a C<&shell> method
 
 #running ./example/02-registered demo interactive
 
+  Your app as a shell. Type commands with arguments
   
+  Available Commands:
+      business   	You gotta do what you gotta do.
+      demo       	
+      exit       	exit the ./example/02-registered shell
+      help       	show syntax and available commands
+      interactive	run ./example/02-registered in interactive mode
+      serious    	Important functionality - not to be joked about
+  
+  [./example/02-registered] exit
 
-## 02-registered exited with 255
+#.
 
 If you call C<< ->shell_options >> you will get an extra sub-command that starts a shell for you.
 
@@ -289,9 +299,41 @@ If you call C<< ->shell_options >> you will get an extra sub-command that starts
 
 #running ./example/03-subshell-app demo shell something status critter_shell critterfy exit
 
+  Your app as a shell. Type commands with arguments
   
+  Available Commands:
+      critter_shell	a sub-shell
+      demo         	
+      exit         	exit the ./example/03-subshell-app shell
+      help         	show syntax and available commands
+      something    	helpful things
+      status       	show current status
+  
+  [./example/03-subshell-app] something
+  Helpful things going on: ... done
+  
+  [./example/03-subshell-app] status
+  Deadlines: met
+  Financial: under budget
+  Customers: happy
+  Pigs     : saddled up and ready for flight
+  
+  [./example/03-subshell-app] critter_shell
+  Your app as a shell. Type commands with arguments
+  
+  Available Commands:
+      critterfy  	setup critter instance for user with given id
+      decritterfy	remove a critter, for the user with given id
+      exit       	exit the ./example/03-subshell-app shell
+      help       	show syntax and available commands
+  
+  critters> critterfy
+  A critter has been configured for the current user
+  
+  critters> exit
+  [./example/03-subshell-app] exit
 
-## 03-subshell-app exited with 255
+#.
 
 =head2 Commands with arguments 
 

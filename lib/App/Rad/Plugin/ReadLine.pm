@@ -1,6 +1,6 @@
 package App::Rad::Plugin::ReadLine;
 BEGIN {
-  $App::Rad::Plugin::ReadLine::VERSION = '0.002';
+  $App::Rad::Plugin::ReadLine::VERSION = '0.003'; # TRIAL
 }
 
 # ABSTRACT: App::Rad::Plugin::ReadLine a Term::UI ->shell for Rad Apps
@@ -174,7 +174,7 @@ App::Rad::Plugin::ReadLine - App::Rad::Plugin::ReadLine a Term::UI ->shell for R
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package App::Rad::Plugin::ReadLine::Demo;
 BEGIN {
-  $App::Rad::Plugin::ReadLine::Demo::VERSION = '0.002';
+  $App::Rad::Plugin::ReadLine::Demo::VERSION = '0.003'; # TRIAL
 }
 # ABSTRACT: export &demo into your App::Rad app, so you can use ExampleRunner in the pod
 
@@ -53,7 +53,7 @@ App::Rad::Plugin::ReadLine::Demo - export &demo into your App::Rad app, so you c
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 what?!
 
